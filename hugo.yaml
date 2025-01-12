@@ -1,0 +1,119 @@
+baseURL: "https://shakex.github.io/"
+title: 布丁布瓜
+copyright: "©2025 [布丁布瓜](https://shakex.github.io/)"
+theme: PaperMod
+languageCode: "en-us"
+
+enableInlineShortcodes: true # shortcode，类似于模板变量，可以在写 markdown 的时候便捷地插入，官方文档中有一个视频讲的很通俗
+hasCJKLanguage: true # 是否有 CJK 的字符
+enableRobotsTXT: true # 允许生成 robots.txt
+buildDrafts: false # 构建时是否包括草稿
+buildFuture: false # 构建未来发布的内容
+buildExpired: false # 构建过期的内容
+enableEmoji: true # 允许 emoji
+pygmentsUseClasses: true
+defaultContentLanguage: zh # 顶部首先展示的语言界面
+defaultContentLanguageInSubdir: false # 是否要在地址栏加上默认的语言代码
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # necessary for search
+
+languages:
+  zh:
+    languageName: "中文" # 展示的语言名
+    weight: 1 # 权重
+    taxonomies: # 分类系统
+      category: categories
+      tag: tags
+      series: series
+    menus:
+      main:
+        - name: 归档
+          url: archives
+          weight: 2
+        - name: 栏目
+          url: series
+          weight: 3
+        - name: 搜索
+          url: search
+          weight: 5
+        - name: 关于
+          pageRef: about
+          weight: 6
+  # en:
+  #   languageName: "English"
+  #   weight: 2
+  #   taxonomies:
+  #     category: categories
+  #     tag: tags
+  #     series: series
+  #   menu:
+  #     main:
+  #       - name: Archive
+  #         url: archives
+  #         weight: 5
+  #       - name: Search
+  #         url: search/
+  #         weight: 10
+  #       - name: Tags
+  #         url: tags/
+  #         weight: 10
+  #       - name: WiKi
+  #         url: https://github.com/adityatelange/hugo-PaperMod/wiki/
+  
+
+params:
+  author: shakex
+  description: "Pudding & Pourquoi"
+  defaultTheme: auto
+  # disableThemeToggle: true
+  ShowShareButtons: false
+  ShowReadingTime: false
+  # disableSpecial1stPost: true
+  displayFullLangName: false
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: false
+  ShowWordCount: true
+  ShowCodeCopyButtons: true
+  ShowRssButtonInSectionTermList: false
+  ShowAllPagesInArchive: true
+  ShowPageNums: true
+  ShowToc: true
+
+  homeInfoParams:
+    Title: "👋"
+    Content: 关于理智与趣味的分享。
+
+  # socialIcons:
+  #   - name: github
+  #     title: View Source on Github
+  #     url: "https://github.com/adityatelange/hugo-PaperMod"
+
+  fuseOpts:
+      isCaseSensitive: false # 是否大小写敏感
+      shouldSort: true # 是否排序
+      location: 0
+      distance: 1000
+      threshold: 0.4
+      minMatchCharLength: 0
+      # limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
+      keys: ["title", "permalink", "summary", "content"]
+      includeMatches: true
+
+  giscus:
+    repo: "shakex/shakex.github.io"
+    repoId: "MDEwOlJlcG9zaXRvcnk1MTY5MzAwMg=="
+    category: "Announcements"
+    # categoryId: "xxxxx"
+    mapping: "pathname"
+    strict: "0"
+    reactionsEnabled: "0"
+    emitMetadata: "0"
+    inputPosition: "bottom"
+    lightTheme: "light"
+    darkTheme: "dark"
+    lang: "zh-CN"
+    crossorigin: "anonymous"
